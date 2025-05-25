@@ -61,14 +61,6 @@ class FlutterSmsPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
 
   // V1 embedding entry point. This is deprecated and will be removed in a future Flutter
   // release but we leave it here in case someone's app does not utilize the V2 embedding yet.
-  companion object {
-    @JvmStatic
-    fun registerWith(registrar: Registrar) {
-      val inst = FlutterSmsPlugin()
-      inst.activity = registrar.activity()
-      inst.setupCallbackChannels(registrar.messenger())
-    }
-  }
 
   override fun onMethodCall(call: MethodCall, result: Result) {
     when (call.method) {
